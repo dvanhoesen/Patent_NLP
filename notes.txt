@@ -1,0 +1,28 @@
+Notes:
+
+US patents
+application number - assigned when application filed at USPTO (format: YY/######)
+publication number - assigned when application is published (format: YYYY/#######)
+patent number - assigned if the application is granted  (format ########)
+
+
+Process:
+0. Determine patent scrape method
+  - Python API / functions?
+  - Search for all patents or by list of keywords?
+  - Storing data? (text files, csv for patent numbers ...)
+1. Scrape patent text (abstracts, patent number, body of text (2nd iteration))
+2. Prepare scraped data 
+  - tokenize data (i.e. list of strings, remove spaces, remove newlines, lowercase,..)
+  - Parts of Speech (POS) tagging - filtering unnecessary words
+  - Word stemming - reducing words to base or root form
+  - What to do with unkonwn words / characters?
+3. Prepare model
+  - Transfer learning with pretrained model or from scratch?
+  - Additional features / final layers for transfer learning model?
+  - How to make it so that an output is a paragraph?
+     - start with single keyword and let the model sequentially predict next word?
+4. Split data to Train/Test 
+  - Is this done in NLP?
+5. Train model
+6. Make predictions

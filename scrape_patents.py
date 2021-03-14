@@ -32,7 +32,7 @@ import time
 
 if __name__ == "__main__":
     
-    n = 20
+    n = 2
     
     start = time.time()
     
@@ -45,8 +45,10 @@ if __name__ == "__main__":
     print("Time for %s downloads: " %str(n), end - start)
     
     
-    for i in range(len(results.abstract.values)):
-        print("\n", results.abstract.values[i])
-    
-    
-    
+    for loc in results.url.values:
+        pat = pypatent.Patent(loc)
+        print("\n",pat.patent_num)
+        print(pat.abstract)
+
+    end = time.time()
+    print("\nTime for %s downloads: " %str(n), end - start)
